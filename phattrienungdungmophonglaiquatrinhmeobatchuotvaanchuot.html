@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="mouse.js"></script>
+    <script src="cat.js"></script>
+</head>
+<body>
+<script>
+    class Cat{
+        constructor(_name, _weight,_speed) {
+            this.name = _name;
+            this.weight = _weight;
+            this.speed = _speed;
+        }
+        speak(str){
+            return this.name + " " + str;
+        }
+        catch(mouse){
+            if (this.speed > mouse.speed)
+                console.log(this.name + " da bat dc chuot " + mouse.name);
+        }
+        eat(mouse){
+            if (mouse.status)
+            {
+                mouse.status = false;
+                this.weight += mouse.weight;
+                console.log("chuot " + mouse.name + " da bi meo " + this.name + "thit" );
+            }
+        }
+    }
+    class Mouse{
+        constructor(_name, _weight,_speed) {
+            this.status = true;
+            this.name = _name;
+            this.weight = _weight;
+            this.speed = _speed;
+        }
+        speak(str){
+            return this.name + " " + str;
+        }
+
+    }
+    let chuot1 = new Mouse("Chuot 1", 49, 30);
+    let chuot2 = new Mouse("Chuot 2", 65, 40);
+    let meo =  new Cat("Kieu Anh", 45, 35);
+    meo.eat(chuot1);
+</script>
+
+
+</body>
+</html>
